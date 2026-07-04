@@ -15,7 +15,7 @@ const DEFAULT_CONFIG = {
       title: "Cocina Saludable by JB",
       description: "Recetas saludables, simples y prácticas para todos los días.",
       image: "imagenes/cocina-saludable.jpg",
-      pdf: "pdf/cocina-saludable-by-jb-obtimizado.pdf"
+      pdf: "pdf/cocina-saludable-by-jb-optimizado.pdf"
     },
     {
       title: "Pastelería Profesional by Ile",
