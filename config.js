@@ -16,7 +16,8 @@ const DEFAULT_CONFIG = {
       description: "Recetas saludables, simples y prácticas para todos los días.",
       image: "imagenes/cocina-saludable.jpg",
       pdf: "pdf/cocina-saludable-by-jb-optimizado.pdf"
-    },
+      shopify: "https://e-books-ediciones-jb.myshopify.com/products/e-book-cocina-saludable-by-jb",
+  },
     {
       title: "Pastelería Profesional by Ile",
       description: "Pastelería, técnicas, decoración y recetas para emprender.",
