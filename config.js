@@ -30,7 +30,8 @@ const DEFAULT_CONFIG = {
       description: "Cookies premium, gigantes, rellenas y comerciales.",
       image: "imagenes/galletitas-new-york.jpg",
       pdf: "pdf/galletitas-new-york-obtimizado.pdf"
-    },
+      shopify: "https://e-books-ediciones-jb.myshopify.com/products/e-book-galletitas-estilo-new-york-by-ile",    
+  },
     {
       title: "Recetas Sin TACC by JB",
       description: "Opciones aptas, fáciles y deliciosas para ampliar tu cocina.",
