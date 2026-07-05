@@ -29,12 +29,15 @@ export async function onRequestPost(context) {
 
     const data = await response.json();
 
-    const answer =
-      data.output?.[0]?.content?.[0]?.text ||
-      "No pude generar una respuesta en este momento.";
+if (!response.ok) {
+  return Response.json({
+    answer: JSON.stringify(data)
+  });
+}
 
-    return Response.json({ answer });
-  } catch (error) {
+return Response.json({
+  answer: data.output_text || JSON.stringify(data)
+});  } catch (error) {
     return Response.json({
       answer: "Hubo un error al conectar con la IA. Revisá la configuración."
     });
