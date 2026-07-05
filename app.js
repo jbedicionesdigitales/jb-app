@@ -20,7 +20,7 @@ function renderEbooks() {
 
   grid.innerHTML = "";
 
-  siteConfig.ebooks.forEach(function(book) {
+  siteConfig.ebooks.forEach(function(book, index) {    
     const card = document.createElement("article");
     card.className = "card ebook";
 
@@ -35,8 +35,8 @@ function renderEbooks() {
     '<span>⭐ Edición Premium</span>' +
   '</div>' +
   '<div class="ebook-actions">' +
-    '<a class="btn secondary" href="' + book.pdf + '" target="_blank">Ver muestra</a>' +
-    '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
+    '<a class="btn secondary" href="ebook.html?id=' + index + '">Ver contenido</a>' +    
+      '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
   '</div>';
     grid.appendChild(card);
   });
