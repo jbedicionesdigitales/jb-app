@@ -114,28 +114,42 @@ chat.innerHTML += `<div class="msg bot">${data.answer}</div>`;
   chat.scrollTop = chat.scrollHeight;
 }
 
-function guardarPlanificacion() {  
-  const dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+const camposPlanificacion = [
+  "lunes_desayuno", "lunes_almuerzo", "lunes_merienda", "lunes_cena",
+  "martes_desayuno", "martes_almuerzo", "martes_merienda", "martes_cena",
+  "miercoles_desayuno", "miercoles_almuerzo", "miercoles_merienda", "miercoles_cena",
+  "jueves_desayuno", "jueves_almuerzo", "jueves_merienda", "jueves_cena",
+  "viernes_desayuno", "viernes_almuerzo", "viernes_merienda", "viernes_cena",
+  "sabado_desayuno", "sabado_almuerzo", "sabado_merienda", "sabado_cena",
+  "domingo_desayuno", "domingo_almuerzo", "domingo_merienda", "domingo_cena"
+];
 
-  dias.forEach(dia => {
-    const input = document.getElementById(dia);
-    if (input) {
-      localStorage.setItem("plan_" + dia, input.value);
-    }
+function guardarPlanificacion() {
+  camposPlanificacion.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) localStorage.setItem("plan_" + id, input.value);
   });
 
-  alert("Planificación guardada correctamente ✅");
+  alert("Planificación semanal guardada correctamente ✅");
 }
 
 function cargarPlanificacion() {
-  const dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
-
-  dias.forEach(dia => {
-    const input = document.getElementById(dia);
-    if (input) {
-      input.value = localStorage.getItem("plan_" + dia) || "";
-    }
+  camposPlanificacion.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) input.value = localStorage.getItem("plan_" + id) || "";
   });
+}
+
+function borrarPlanificacion() {
+  if (!confirm("¿Querés borrar toda la planificación semanal?")) return;
+
+  camposPlanificacion.forEach(id => {
+    localStorage.removeItem("plan_" + id);
+    const input = document.getElementById(id);
+    if (input) input.value = "";
+  });
+
+  alert("Planificación borrada correctamente ✅");
 }
 
 document.addEventListener("DOMContentLoaded", cargarPlanificacion);
