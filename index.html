@@ -101,21 +101,25 @@ target="_blank">
   <p>Organizá tus comidas de toda la semana utilizando las recetas de tus e-books.</p>
 
   <table class="planner">
-    <tr>
-      <th>Día</th>
-      <th>Plan de comidas</th>
-    </tr>
+  <tr>
+    <th>Día</th>
+    <th>Desayuno</th>
+    <th>Almuerzo</th>
+    <th>Merienda</th>
+    <th>Cena</th>
+  </tr>
 
-    <tr><td>Lunes</td><td><input type="text" id="lunes"></td></tr>
-    <tr><td>Martes</td><td><input type="text" id="martes"></td></tr>
-    <tr><td>Miércoles</td><td><input type="text" id="miercoles"></td></tr>
-    <tr><td>Jueves</td><td><input type="text" id="jueves"></td></tr>
-    <tr><td>Viernes</td><td><input type="text" id="viernes"></td></tr>
-    <tr><td>Sábado</td><td><input type="text" id="sabado"></td></tr>
-    <tr><td>Domingo</td><td><input type="text" id="domingo"></td></tr>
+  <tr><td>Lunes</td><td><input id="lunes_desayuno"></td><td><input id="lunes_almuerzo"></td><td><input id="lunes_merienda"></td><td><input id="lunes_cena"></td></tr>
+  <tr><td>Martes</td><td><input id="martes_desayuno"></td><td><input id="martes_almuerzo"></td><td><input id="martes_merienda"></td><td><input id="martes_cena"></td></tr>
+  <tr><td>Miércoles</td><td><input id="miercoles_desayuno"></td><td><input id="miercoles_almuerzo"></td><td><input id="miercoles_merienda"></td><td><input id="miercoles_cena"></td></tr>
+  <tr><td>Jueves</td><td><input id="jueves_desayuno"></td><td><input id="jueves_almuerzo"></td><td><input id="jueves_merienda"></td><td><input id="jueves_cena"></td></tr>
+  <tr><td>Viernes</td><td><input id="viernes_desayuno"></td><td><input id="viernes_almuerzo"></td><td><input id="viernes_merienda"></td><td><input id="viernes_cena"></td></tr>
+  <tr><td>Sábado</td><td><input id="sabado_desayuno"></td><td><input id="sabado_almuerzo"></td><td><input id="sabado_merienda"></td><td><input id="sabado_cena"></td></tr>
+  <tr><td>Domingo</td><td><input id="domingo_desayuno"></td><td><input id="domingo_almuerzo"></td><td><input id="domingo_merienda"></td><td><input id="domingo_cena"></td></tr>
+</table>
 
-  </table>
 
+<button class="btn white" type="button" onclick="borrarPlanificacion()">Borrar planificación</button>
   <button class="btn primary" type="button" onclick="guardarPlanificacion()">Guardar planificación</button>
 </section>
   <h2 id="admin" class="admin-area">Panel de administración</h2>
