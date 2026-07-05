@@ -2,8 +2,8 @@ const DEFAULT_CONFIG = {
   brandName: "JB Ediciones Digitales",
   brandSubtitle: "Plataforma editable de e-books con IA",
   heroPill: "Más de 200 recetas + bonus exclusivos",
-  heroTitle: "Tu plataforma premium de recetas digitales",
-  heroText: "Accedé a e-books profesionales, contenido exclusivo, recursos para emprender y un asistente inteligente de cocina.",
+  heroTitle: "E-books profesionales de cocina, pastelería y recetas exclusivas",
+heroText: "Accedé a recetas digitales, muestras gratuitas, contenido premium y recursos prácticos para organizar tus comidas y compras semanales.",
   heroImage: "imagenes/foto-principal.jpg",
   payments: {
     shopify: "https://e-books-ediciones-jb.myshopify.com",
