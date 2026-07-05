@@ -53,7 +53,7 @@ function renderPlans() {
       '<h3>Membresía Mensual</h3>' +
       '<div class="price">$9.990/mes</div>' +
       '<p>Acceso premium mensual a e-books, recetas, bonus e IA Chef JB.</p>' +
-      '<a class="btn primary" href="' + siteConfig.planMensual + '" target="_blank">Comprar mensual</a>' +
+      '<a class="btn primary" href="' + siteConfig.payments.planMensual + '" target="_blank">Comprar mensual</a>' +
     '</article>' +
 
     '<article class="card plan featured">' +
@@ -61,7 +61,7 @@ function renderPlans() {
       '<h3>Membresía Anual</h3>' +
       '<div class="price">$89.990/año</div>' +
       '<p>12 meses de acceso premium con mayor ahorro y contenido exclusivo.</p>' +
-      '<a class="btn primary" href="' + siteConfig.planAnual + '" target="_blank">Comprar anual</a>' +
+      '<a class="btn primary" href="' + siteConfig.payments.planAnual + '" target="_blank">Comprar anual</a>' +
     '</article>' +
 
     '<article class="card plan">' +
@@ -69,7 +69,7 @@ function renderPlans() {
       '<h3>Membresía Vitalicia</h3>' +
       '<div class="price">$129.990</div>' +
       '<p>Pago único con acceso permanente a la biblioteca y futuras actualizaciones.</p>' +
-      '<a class="btn primary" href="' + siteConfig.planVitalicio + '" target="_blank">Comprar vitalicia</a>' +
+      '<a class="btn primary" href="' + siteConfig.payments.planVitalicio + '" target="_blank">Comprar vitalicia</a>' +
     '</article>';
 }
 document.addEventListener("DOMContentLoaded", renderAll);
