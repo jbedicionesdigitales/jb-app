@@ -28,7 +28,7 @@ function renderEbooks(){
       <span class="tag">E-book PDF</span>
       <h3>${book.title}</h3>
       <p>${book.description}</p>
-      <a class="btn primary" href="${book.pdf}" target="_blank">Abrir PDF</a>
+      <a class="btn primary" href="${book.shopify}" target="_blank">Comprar ahora</a>
     `;
     grid.appendChild(article);
   });
@@ -49,7 +49,7 @@ function renderPlans(){
       <h3>Membresía Premium</h3>
       <div class="price">$8.999/mes</div>
       <p>Acceso a todos los e-books, bonus y actualizaciones.</p>
-      <a class="btn white" href="${p.mercadoPago}" target="_blank">Pagar con Mercado Pago</a>
+      <a class="btn white" href="${book.pdf}" target="_blank">Ver PDF</a>
     </article>
     <article class="card plan">
       <span class="tag">Afiliados</span>
