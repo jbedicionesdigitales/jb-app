@@ -25,12 +25,19 @@ function renderEbooks() {
     card.className = "card ebook";
 
     card.innerHTML =
-      '<img src="' + book.image + '" alt="' + book.title + '">' +
-      '<span class="tag">E-book PDF</span>' +
-      '<h3>' + book.title + '</h3>' +
-      '<p>' + book.description + '</p>' +
-      '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>';
-
+  '<img src="' + book.image + '" alt="' + book.title + '">' +
+  '<span class="tag">E-book PDF</span>' +
+  '<h3>' + book.title + '</h3>' +
+  '<p>' + book.description + '</p>' +
+  '<div class="ebook-info">' +
+    '<span>📖 50 recetas</span>' +
+    '<span>🎁 Bonus exclusivos</span>' +
+    '<span>⭐ Edición Premium</span>' +
+  '</div>' +
+  '<div class="ebook-actions">' +
+    '<a class="btn secondary" href="' + book.pdf + '" target="_blank">Ver muestra</a>' +
+    '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
+  '</div>';
     grid.appendChild(card);
   });
 }
