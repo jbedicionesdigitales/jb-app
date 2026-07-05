@@ -114,7 +114,7 @@ chat.innerHTML += `<div class="msg bot">${data.answer}</div>`;
   chat.scrollTop = chat.scrollHeight;
 }
 
-
+function guardarPlanificacion() {  
   const dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
 
   dias.forEach(dia => {
