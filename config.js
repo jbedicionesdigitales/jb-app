@@ -8,8 +8,14 @@ const DEFAULT_CONFIG = {
   payments: {
     shopify: "https://e-books-ediciones-jb.myshopify.com",
     mercadoPago: "TU_LINK_DE_MERCADO_PAGO",
-    hotmart: "TU_LINK_DE_HOTMART"
-  },
+    hotmart: "TU_LINK_DE_HOTMART",
+
+    planGratis: "#",
+  planMensual: "PEGAR_LINK_MEMBRESIA_MENSUAL",
+  planAnual: "PEGAR_LINK_MEMBRESIA_ANUAL",
+  planVitalicio: "PEGAR_LINK_MEMBRESIA_DE_POR_VIDA"
+},
+
   ebooks: [
     {
       title: "Cocina Saludable by JB",
