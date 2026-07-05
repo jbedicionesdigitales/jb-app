@@ -121,6 +121,17 @@ target="_blank">
 <button class="btn primary" type="button" onclick="guardarPlanificacion()">Guardar planificación</button>
 <button class="btn white" type="button" onclick="borrarPlanificacion()">Borrar planificación</button>
 </section>
+  <h2 id="compras">🛒 Lista de Compras JB</h2>
+
+<section class="card">
+  <p>Agregá los ingredientes que necesitás comprar para tus recetas semanales.</p>
+
+  <input id="nuevoProducto" type="text" placeholder="Ej: huevos, harina, leche">
+  <button class="btn primary" type="button" onclick="agregarProducto()">Agregar producto</button>
+  <button class="btn white" type="button" onclick="borrarListaCompras()">Borrar lista</button>
+
+  <ul id="listaCompras"></ul>
+</section>  
   <h2 id="admin" class="admin-area">Panel de administración</h2>
 <section class="admin admin-area">    
   <div class="card">
