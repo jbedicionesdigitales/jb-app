@@ -216,8 +216,21 @@ function borrarListaCompras() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarListaCompras);
+function activarModoCliente() {
 
+  document.getElementById("biblioteca").style.display = "block";
 
+  alert("Bienvenido al Modo Cliente Premium (Demo)");
+
+}
+
+function activarModoVisitante() {
+
+  document.getElementById("biblioteca").style.display = "none";
+
+  alert("Modo Visitante activado");
+
+}
 
 
 
