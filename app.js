@@ -84,3 +84,35 @@ function quickAsk(question) {
     document.getElementById("question").value = question;
     askAI();
 }
+function askAI() {
+  const input = document.getElementById("question");
+  const chat = document.getElementById("chat");
+  const question = input.value.trim();
+
+  if (!question) return;
+
+  const userMsg = document.createElement("div");
+  userMsg.className = "msg user";
+  userMsg.textContent = question;
+  chat.appendChild(userMsg);
+
+  const botMsg = document.createElement("div");
+  botMsg.className = "msg bot";
+
+  if (question.toLowerCase().includes("menú")) {
+    botMsg.textContent = "Te sugiero un menú semanal saludable: lunes pollo con arroz integral, martes tarta de verduras, miércoles ensalada completa, jueves pescado al horno, viernes pasta con vegetales, sábado omelette nutritivo y domingo comida libre equilibrada.";
+  } else if (question.toLowerCase().includes("porciones")) {
+    botMsg.textContent = "Para calcular porciones, indicá cuántas personas comen y la receta base. Como regla general, multiplicá todos los ingredientes por la cantidad de porciones necesarias.";
+  } else {
+    botMsg.textContent = "Con esos ingredientes podés preparar una receta simple y rica. Por ejemplo: salteado, tortilla, ensalada tibia o una preparación al horno. Cuando conectemos la IA real, recibirás respuestas mucho más completas.";
+  }
+
+  chat.appendChild(botMsg);
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function quickAsk(question) {
+  document.getElementById("question").value = question;
+  askAI();
+}
