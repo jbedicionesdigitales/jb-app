@@ -214,3 +214,58 @@ function borrarListaCompras() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarListaCompras);
+function obtenerFavoritos() {
+  return JSON.parse(localStorage.getItem("favoritosJB")) || [];
+}
+
+function guardarFavoritos(lista) {
+  localStorage.setItem("favoritosJB", JSON.stringify(lista));
+}
+
+function mostrarFavoritos() {
+  const lista = obtenerFavoritos();
+  const ul = document.getElementById("listaFavoritos");
+  if (!ul) return;
+
+  ul.innerHTML = "";
+
+  lista.forEach((receta, index) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      ⭐ ${receta}
+      <button type="button" onclick="eliminarFavorita(${index})">Eliminar</button>
+    `;
+
+    ul.appendChild(li);
+  });
+}
+
+function agregarFavorita() {
+  const input = document.getElementById("nuevaRecetaFavorita");
+  if (!input || !input.value.trim()) return;
+
+  const lista = obtenerFavoritos();
+  lista.push(input.value.trim());
+
+  guardarFavoritos(lista);
+  input.value = "";
+  mostrarFavoritos();
+}
+
+function eliminarFavorita(index) {
+  const lista = obtenerFavoritos();
+  lista.splice(index, 1);
+
+  guardarFavoritos(lista);
+  mostrarFavoritos();
+}
+
+function borrarFavoritos() {
+  if (!confirm("¿Querés borrar todas las recetas favoritas?")) return;
+
+  localStorage.removeItem("favoritosJB");
+  mostrarFavoritos();
+}
+
+document.addEventListener("DOMContentLoaded", mostrarFavoritos);
