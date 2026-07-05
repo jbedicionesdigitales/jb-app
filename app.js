@@ -269,17 +269,4 @@ function borrarFavoritos() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarFavoritos);
-function buscarRecetas() {
-  const texto = document.getElementById("buscadorRecetas")?.value.toLowerCase() || "";
-  const tarjetas = document.querySelectorAll("#ebookGrid .card");
 
-  tarjetas.forEach(card => {
-    const contenido = card.innerText.toLowerCase();
-
-    if (contenido.includes(texto)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
