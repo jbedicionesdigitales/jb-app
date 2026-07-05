@@ -40,8 +40,8 @@
       </div>
 
       <div class="ebook-actions">
-        <a id="sampleBtn" class="btn secondary" target="_blank">Descargar muestra</a>
-        <a id="buyBtn" class="btn primary" target="_blank">Comprar ahora</a>
+        <a id="sampleBtn" class="btn secondary" target="_blank">Ver Muestra Gratis</a>
+        <a id="buyBtn" class="btn primary" target="_blank">Comprar E-book Completo</a>
       </div>
     </div>
   </section>
@@ -57,7 +57,7 @@
     document.getElementById("ebookImage").src = book.image;
     document.getElementById("ebookTitle").textContent = book.title;
     document.getElementById("ebookDescription").textContent = book.description;
-    document.getElementById("sampleBtn").href = book.pdf;
+    document.getElementById("sampleBtn").href = book.muestra;    
     document.getElementById("buyBtn").href = book.shopify;
   }
 </script>
