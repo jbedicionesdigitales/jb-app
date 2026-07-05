@@ -114,32 +114,7 @@ chat.innerHTML += `<div class="msg bot">${data.answer}</div>`;
   chat.scrollTop = chat.scrollHeight;
 }
 
-[15:24, 5/7/2026] Venta Ebooks en Alta Calidad: <h2 id="planificador">📅 Planificador Semanal JB</h2>
 
-<section class="card">
-
-  <p>Organizá tus comidas de toda la semana utilizando las recetas de tus e-books.</p>
-
-  <table class="planner">
-    <tr>
-      <th>Día</th>
-      <th>Plan de comidas</th>
-    </tr>
-
-    <tr><td>Lunes</td><td><input type="text" id="lunes"></td></tr>
-    <tr><td>Martes</td><td><input type="text" id="martes"></td></tr>
-    <tr><td>Miércoles</td><td><input type="text" id="miercoles"></td></tr>
-    <tr><td>Jueves</td><td><input type="text" id="jueves"></td></tr>
-    <tr><td>Viernes</td><td><input type="text" id="viernes"></td></tr>
-    <tr><td>Sábado</td><td><input type="text" id="sabado"></td></tr>
-    <tr><td>Domingo</td><td><input type="text" id="domingo"></td></tr>
-
-  </table>
-
-  <button class="btn primary">Guardar planificación</button>
-
-</section>
-[15:27, 5/7/2026] Venta Ebooks en Alta Calidad: function guardarPlanificacion() {
   const dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
 
   dias.forEach(dia => {
