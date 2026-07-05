@@ -1,28 +1,34 @@
 let siteConfig = JSON.parse(localStorage.getItem("JB_CONFIG") || "null") || DEFAULT_CONFIG;
 
-function saveConfig(){
+function saveConfig() {
   localStorage.setItem("JB_CONFIG", JSON.stringify(siteConfig));
   renderAll();
 }
 
-function renderAll(){
+function renderAll() {
   document.getElementById("brandName").textContent = siteConfig.brandName;
   document.getElementById("brandSubtitle").textContent = siteConfig.brandSubtitle;
   document.getElementById("heroPill").textContent = siteConfig.heroPill;
   document.getElementById("heroTitle").textContent = siteConfig.heroTitle;
   document.getElementById("heroText").textContent = siteConfig.heroText;
-  document.getElementById("hero").style.backgroundImage = `linear-gradient(115deg,rgba(33,21,13,.9),rgba(200,107,45,.55)), url('${siteConfig.heroImage}')`;
+  document.getElementById("hero").style.backgroundImage =
+    linear-gradient(115deg, rgba(33,21,13,.9), rgba(206,93,44,.55)), url('${siteConfig.heroImage}');
+
   renderEbooks();
   renderPlans();
   fillAdmin();
 }
 
-function renderEbooks(){
+function renderEbooks() {
   const grid = document.getElementById("ebookGrid");
+  if (!grid) return;
+
   grid.innerHTML = "";
+
   siteConfig.ebooks.forEach(book => {
     const article = document.createElement("article");
     article.className = "card ebook";
+
     article.innerHTML = `
       <img src="${book.image}" onerror="this.src='imagenes/placeholder.svg'" alt="${book.title}">
       <span class="tag">E-book PDF</span>
@@ -30,65 +36,90 @@ function renderEbooks(){
       <p>${book.description}</p>
       <a class="btn primary" href="${book.shopify}" target="_blank">Comprar ahora</a>
     `;
+
     grid.appendChild(article);
   });
 }
 
-function renderPlans(){
-  const p = siteConfig.payments;
-  document.getElementById("plansGrid").innerHTML = `
+function renderPlans() {
+  const p = siteConfig.payments || {};
+
+  const grid = document.getElementById("plansGrid");
+  if (!grid) return;
+
+  grid.innerHTML = `
     <article class="card plan">
       <span class="tag">Venta directa</span>
       <h3>Comprar e-books</h3>
       <div class="price">$13.500</div>
       <p>Precio editable para venta individual.</p>
-      <a class="btn primary" href="${p.shopify}" target="_blank">Comprar en Shopify</a>
+      <a class="btn primary" href="${p.shopify || '#'}" target="_blank">Comprar en Shopify</a>
     </article>
+
     <article class="card plan featured">
       <span class="tag">Recomendado</span>
       <h3>Membresía Premium</h3>
       <div class="price">$8.999/mes</div>
-      <p>Acceso a todos los e-books, bonus y actualizaciones.</p>
-      <a class="btn white" href="${siteConfig.payments.planGratis}" target="_blank">Empezar gratis</a>    
-      </article>
-    <article class="card plan">
-      <span class="tag">Afiliados</span>
-      <h3>Hotmart</h3>
-      <div class="price">Digital</div>
-      <p>Preparado para venta automática y afiliados.</p>
-      <a class="btn primary" href="${siteConfig.payments.planMensual}" target="_blank">Suscribirme mensual</a>    
-      </article>,
-      <a class="btn primary" href="${siteConfig.payments.planAnual}" target="_blank">Suscribirme anual</a>
-      <a class="btn primary" href="${siteConfig.payments.planVitalicio}" target="_blank">Acceso de por vida</a>  
-      }
+      <p>Acceso a contenido exclusivo, recursos y novedades.</p>
+      <a class="btn primary" href="${siteConfig.planMensual || '#'}" target="_blank">Comprar membresía</a>
+    </article>
 
-function fillAdmin(){
-  document.getElementById("editBrandName").value = siteConfig.brandName;
-  document.getElementById("editBrandSubtitle").value = siteConfig.brandSubtitle;
-  document.getElementById("editHeroTitle").value = siteConfig.heroTitle;
-  document.getElementById("editHeroText").value = siteConfig.heroText;
-  document.getElementById("editHeroPill").value = siteConfig.heroPill;
-  document.getElementById("editHeroImage").value = siteConfig.heroImage;
-  document.getElementById("editShopify").value = siteConfig.payments.shopify;
-  document.getElementById("editMercadoPago").value = siteConfig.payments.mercadoPago;
-  document.getElementById("editHotmart").value = siteConfig.payments.hotmart;
+    <article class="card plan">
+      <span class="tag">Pago alternativo</span>
+      <h3>Mercado Pago</h3>
+      <p>Link editable para cobros por Mercado Pago.</p>
+      <a class="btn primary" href="${p.mercadoPago || '#'}" target="_blank">Pagar con Mercado Pago</a>
+    </article>
+
+    <article class="card plan">
+      <span class="tag">Hotmart</span>
+      <h3>Pago internacional</h3>
+      <p>Link editable para Hotmart.</p>
+      <a class="btn primary" href="${p.hotmart || '#'}" target="_blank">Comprar en Hotmart</a>
+    </article>
+  `;
+}
+
+function fillAdmin() {
+  document.getElementById("editBrandName").value = siteConfig.brandName || "";
+  document.getElementById("editBrandSubtitle").value = siteConfig.brandSubtitle || "";
+  document.getElementById("editHeroTitle").value = siteConfig.heroTitle || "";
+  document.getElementById("editHeroText").value = siteConfig.heroText || "";
+  document.getElementById("editHeroPill").value = siteConfig.heroPill || "";
+  document.getElementById("editHeroImage").value = siteConfig.heroImage || "";
+
+  document.getElementById("editShopify").value = siteConfig.payments?.shopify || "";
+  document.getElementById("editMercadoPago").value = siteConfig.payments?.mercadoPago || "";
+  document.getElementById("editHotmart").value = siteConfig.payments?.hotmart || "";
 
   const editor = document.getElementById("ebookEditor");
+  if (!editor) return;
+
   editor.innerHTML = "";
-  siteConfig.ebooks.forEach((book, i) => {
-    const row = document.createElement("div");
-    row.className = "editorRow";
-    row.innerHTML = `
-      <div><label>Título ${i+1}</label><input id="bookTitle${i}" value="${book.title}"></div>
-      <div><label>Descripción ${i+1}</label><input id="bookDesc${i}" value="${book.description}"></div>
-      <div><label>Imagen ${i+1}</label><input id="bookImage${i}" value="${book.image}"></div>
-      <div><label>PDF ${i+1}</label><input id="bookPdf${i}" value="${book.pdf}"></div>
+
+  siteConfig.ebooks.forEach((book, index) => {
+    const box = document.createElement("div");
+    box.className = "ebook-edit";
+
+    box.innerHTML = `
+      <h4>E-book ${index + 1}</h4>
+      <label>Título</label>
+      <input id="ebookTitle${index}" value="${book.title || ""}">
+      <label>Descripción</label>
+      <input id="ebookDesc${index}" value="${book.description || ""}">
+      <label>Imagen</label>
+      <input id="ebookImage${index}" value="${book.image || ""}">
+      <label>PDF</label>
+      <input id="ebookPdf${index}" value="${book.pdf || ""}">
+      <label>Link Shopify / Compra</label>
+      <input id="ebookShopify${index}" value="${book.shopify || ""}">
     `;
-    editor.appendChild(row);
+
+    editor.appendChild(box);
   });
 }
 
-function saveMain(){
+function saveMain() {
   siteConfig.brandName = document.getElementById("editBrandName").value;
   siteConfig.brandSubtitle = document.getElementById("editBrandSubtitle").value;
   siteConfig.heroTitle = document.getElementById("editHeroTitle").value;
@@ -96,59 +127,35 @@ function saveMain(){
   siteConfig.heroPill = document.getElementById("editHeroPill").value;
   siteConfig.heroImage = document.getElementById("editHeroImage").value;
   saveConfig();
-  alert("Contenido principal guardado.");
+  alert("Cambios guardados");
 }
 
-function savePayments(){
-  siteConfig.payments.shopify = document.getElementById("editShopify").value;
-  siteConfig.payments.mercadoPago = document.getElementById("editMercadoPago").value;
-  siteConfig.payments.hotmart = document.getElementById("editHotmart").value;
+function savePayments() {
+  siteConfig.payments = {
+    shopify: document.getElementById("editShopify").value,
+    mercadoPago: document.getElementById("editMercadoPago").value,
+    hotmart: document.getElementById("editHotmart").value
+  };
   saveConfig();
-  alert("Links de pago guardados.");
+  alert("Pagos guardados");
 }
 
-function saveEbooks(){
-  siteConfig.ebooks = siteConfig.ebooks.map((book, i) => ({
-    title: document.getElementById("bookTitle"+i).value,
-    description: document.getElementById("bookDesc"+i).value,
-    image: document.getElementById("bookImage"+i).value,
-    pdf: document.getElementById("bookPdf"+i).value
+function saveEbooks() {
+  siteConfig.ebooks = siteConfig.ebooks.map((book, index) => ({
+    title: document.getElementById(ebookTitle${index}).value,
+    description: document.getElementById(ebookDesc${index}).value,
+    image: document.getElementById(ebookImage${index}).value,
+    pdf: document.getElementById(ebookPdf${index}).value,
+    shopify: document.getElementById(ebookShopify${index}).value
   }));
+
   saveConfig();
-  alert("E-books guardados.");
+  alert("E-books guardados");
 }
 
-function exportConfig(){
-  document.getElementById("exportBox").value = "const DEFAULT_CONFIG = " + JSON.stringify(siteConfig, null, 2) + ";";
+function exportConfig() {
+  document.getElementById("exportBox").value =
+    "const DEFAULT_CONFIG = " + JSON.stringify(siteConfig, null, 2) + ";";
 }
 
-const chat = document.getElementById("chat");
-const question = document.getElementById("question");
-
-function addMessage(text,type){
-  const div=document.createElement("div");
-  div.className="msg "+type;
-  div.textContent=text;
-  chat.appendChild(div);
-  chat.scrollTop=chat.scrollHeight;
-}
-
-function answer(text){
-  const s=text.toLowerCase();
-  if(s.includes("pollo")||s.includes("arroz")) return "Con pollo y arroz podés preparar un bowl saludable con verduras y salsa liviana.";
-  if(s.includes("vender")||s.includes("dulce")) return "Para vender te recomiendo cookies New York, brownies, alfajores y budines.";
-  if(s.includes("menú")||s.includes("semana")) return "Un menú semanal puede incluir pollo, pescado, huevos, legumbres, verduras, arroz y frutas.";
-  if(s.includes("costo")||s.includes("precio")) return "Fórmula simple: ingredientes + packaging + tiempo. Luego multiplicá por 2.5 o 3.";
-  return "IA Chef JB puede ayudarte a crear recetas, adaptar ingredientes, calcular porciones y pensar productos para vender.";
-}
-
-function askAI(){
-  const text=question.value.trim();
-  if(!text)return;
-  addMessage(text,"user");
-  question.value="";
-  setTimeout(()=>addMessage(answer(text),"bot"),350);
-}
-
-question.addEventListener("keydown",e=>{if(e.key==="Enter")askAI();});
-renderAll();
+document.addEventListener("DOMContentLoaded", renderAll);
