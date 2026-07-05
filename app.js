@@ -49,17 +49,18 @@ function renderPlans(){
       <h3>Membresía Premium</h3>
       <div class="price">$8.999/mes</div>
       <p>Acceso a todos los e-books, bonus y actualizaciones.</p>
-      <a class="btn white" href="${book.pdf}" target="_blank">Ver PDF</a>
-    </article>
+      <a class="btn white" href="${siteConfig.payments.planGratis}" target="_blank">Empezar gratis</a>    
+      </article>
     <article class="card plan">
       <span class="tag">Afiliados</span>
       <h3>Hotmart</h3>
       <div class="price">Digital</div>
       <p>Preparado para venta automática y afiliados.</p>
-      <a class="btn primary" href="${p.hotmart}" target="_blank">Comprar en Hotmart</a>
-    </article>
-  `;
-}
+      <a class="btn primary" href="${siteConfig.payments.planMensual}" target="_blank">Suscribirme mensual</a>    
+      </article>,
+      <a class="btn primary" href="${siteConfig.payments.planAnual}" target="_blank">Suscribirme anual</a>
+      <a class="btn primary" href="${siteConfig.payments.planVitalicio}" target="_blank">Acceso de por vida</a>  
+      }
 
 function fillAdmin(){
   document.getElementById("editBrandName").value = siteConfig.brandName;
