@@ -91,7 +91,7 @@ async function askAI() {
 
   if (!question) return;
 
-  chat.innerHTML += <div class="msg user">${question}</div>;
+  chat.innerHTML += `<div class="msg user">${question}</div>`;
 
   const res = await fetch("/functions/ask", {    
     method: "POST",
@@ -109,7 +109,7 @@ async function askAI() {
 
 const data = await res.json();
 
-chat.innerHTML += <div class="msg bot">${data.answer}</div>;
+chat.innerHTML += `<div class="msg bot">${data.answer}</div>`;
   input.value = "";
   chat.scrollTop = chat.scrollHeight;
 }
