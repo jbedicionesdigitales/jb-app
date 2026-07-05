@@ -23,7 +23,8 @@ const DEFAULT_CONFIG = {
       description: "Pastelería, técnicas, decoración y recetas para emprender.",
       image: "imagenes/pasteleria-profesional.jpg",
       pdf: "pdf/pasteleria-profesional-by-ile-obtimizado.pdf"
-    },
+      shopify: "https://e-books-ediciones-jb.myshopify.com/products/e-book-pasteleria-profesional-by-ile",    
+  },
     {
       title: "Galletitas Estilo New York",
       description: "Cookies premium, gigantes, rellenas y comerciales.",
