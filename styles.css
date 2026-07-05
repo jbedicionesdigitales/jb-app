@@ -83,3 +83,25 @@ footer{text-align:center;color:var(--muted);padding:35px 16px}@media(max-width:8
 .login-card .btn{
   margin-top:18px;
 }
+.library-preview{
+  margin-top:20px;
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#fff8ef,#ffffff);
+  border:1px solid rgba(140,82,45,.18);
+}
+
+.library-preview h4{
+  margin:0 0 10px;
+  color:#7a2f1d;
+}
+
+.library-preview ul{
+  margin:0;
+  padding-left:20px;
+}
+
+.library-preview li{
+  margin:8px 0;
+  font-weight:600;
+}
