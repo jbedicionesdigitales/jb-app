@@ -101,10 +101,15 @@ async function askAI() {
     body: JSON.stringify({ question })
   });
 
-  const data = await res.json();
+  if (!res.ok) {
+  const txt = await res.text();
+  alert(txt);
+  return;
+}
 
-  chat.innerHTML += <div class="msg bot">${data.answer}</div>;
+const data = await res.json();
 
+chat.innerHTML += <div class="msg bot">${data.answer}</div>;
   input.value = "";
   chat.scrollTop = chat.scrollHeight;
 }
