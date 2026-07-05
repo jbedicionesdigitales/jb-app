@@ -93,7 +93,7 @@ async function askAI() {
 
   chat.innerHTML += `<div class="msg user">${question}</div>`;
 
-  const res = await fetch("/functions/ask", {    
+  const res = await fetch("/ask", {    
     method: "POST",
     headers: {
       "Content-Type": "application/json"
