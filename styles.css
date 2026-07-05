@@ -61,3 +61,25 @@ footer{text-align:center;color:var(--muted);padding:35px 16px}@media(max-width:8
     transform: none;
   }
 }
+.login-card{
+  max-width:520px;
+}
+
+.login-card label{
+  display:block;
+  margin-top:14px;
+  font-weight:700;
+}
+
+.login-card input{
+  width:100%;
+  margin-top:6px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+.login-card .btn{
+  margin-top:18px;
+}
