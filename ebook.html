@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del E-book | JB Ediciones Digitales</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">JB</div>
+      <div>
+        <b>JB Ediciones Digitales</b>
+        <span>Plataforma premium de e-books</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html#ebooks">E-books</a>
+      <a href="index.html#planes">Planes</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="detail">
+    <img id="ebookImage" src="" alt="E-book">
+    <div>
+      <span class="tag">E-book Premium</span>
+      <h1 id="ebookTitle"></h1>
+      <p id="ebookDescription"></p>
+
+      <div class="ebook-info">
+        <span>📖 50 recetas exclusivas</span>
+        <span>🎁 Bonus incluidos</span>
+        <span>⭐ Edición Premium</span>
+        <span>📱 Acceso digital inmediato</span>
+      </div>
+
+      <div class="ebook-actions">
+        <a id="sampleBtn" class="btn secondary" target="_blank">Descargar muestra</a>
+        <a id="buyBtn" class="btn primary" target="_blank">Comprar ahora</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = Number(params.get("id") || 0);
+  const book = DEFAULT_CONFIG.ebooks[id];
+
+  if (book) {
+    document.getElementById("ebookImage").src = book.image;
+    document.getElementById("ebookTitle").textContent = book.title;
+    document.getElementById("ebookDescription").textContent = book.description;
+    document.getElementById("sampleBtn").href = book.pdf;
+    document.getElementById("buyBtn").href = book.shopify;
+  }
+</script>
+
+</body>
+</html>
