@@ -112,7 +112,4 @@ function askAI() {
   chat.scrollTop = chat.scrollHeight;
 }
 
-function quickAsk(question) {
-  document.getElementById("question").value = question;
-  askAI();
-}
+
