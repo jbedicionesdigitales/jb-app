@@ -37,6 +37,7 @@ const DEFAULT_CONFIG = {
       description: "Opciones aptas, fáciles y deliciosas para ampliar tu cocina.",
       image: "imagenes/recetas-sin-tacc.jpg",
       pdf: "pdf/recetas-sin-tacc-by-jb-obtimizado.pdf"
-    }
+      shopify: "https://e-books-ediciones-jb.myshopify.com/products/e-book-recetas-sin-tacc-by-jb",    
+  }
   ]
 };
