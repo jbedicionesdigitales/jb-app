@@ -153,3 +153,64 @@ function borrarPlanificacion() {
 }
 
 document.addEventListener("DOMContentLoaded", cargarPlanificacion);
+function obtenerListaCompras() {
+  return JSON.parse(localStorage.getItem("listaComprasJB")) || [];
+}
+
+function guardarListaCompras(lista) {
+  localStorage.setItem("listaComprasJB", JSON.stringify(lista));
+}
+
+function mostrarListaCompras() {
+  const lista = obtenerListaCompras();
+  const contenedor = document.getElementById("listaCompras");
+  if (!contenedor) return;
+
+  contenedor.innerHTML = "";
+
+  lista.forEach((producto, index) => {
+    const item = document.createElement("li");
+    item.innerHTML = `
+      <label>
+        <input type="checkbox" ${producto.comprado ? "checked" : ""} onchange="marcarProducto(${index})">
+        ${producto.nombre}
+      </label>
+      <button type="button" onclick="eliminarProducto(${index})">Eliminar</button>
+    `;
+    contenedor.appendChild(item);
+  });
+}
+
+function agregarProducto() {
+  const input = document.getElementById("nuevoProducto");
+  if (!input || !input.value.trim()) return;
+
+  const lista = obtenerListaCompras();
+  lista.push({ nombre: input.value.trim(), comprado: false });
+
+  guardarListaCompras(lista);
+  input.value = "";
+  mostrarListaCompras();
+}
+
+function marcarProducto(index) {
+  const lista = obtenerListaCompras();
+  lista[index].comprado = !lista[index].comprado;
+  guardarListaCompras(lista);
+  mostrarListaCompras();
+}
+
+function eliminarProducto(index) {
+  const lista = obtenerListaCompras();
+  lista.splice(index, 1);
+  guardarListaCompras(lista);
+  mostrarListaCompras();
+}
+
+function borrarListaCompras() {
+  if (!confirm("¿Querés borrar toda la lista de compras?")) return;
+  localStorage.removeItem("listaComprasJB");
+  mostrarListaCompras();
+}
+
+document.addEventListener("DOMContentLoaded", mostrarListaCompras);
