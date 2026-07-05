@@ -35,10 +35,10 @@ function renderEbooks() {
     '<span>⭐ Edición Premium</span>' +
   '</div>' +
   '<div class="ebook-actions">' +
-<a class="btn secondary" href="' + book.muestra + '" target="_blank">
-📖 Ver muestra gratuita
-</a>
-      '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
+'<a class="btn secondary" href="' + book.muestra + '" target="_blank">📖 Ver muestra gratuita</a>' +
+'<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
+'</div>';   
+    '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
   '</div>';
     grid.appendChild(card);
   });
