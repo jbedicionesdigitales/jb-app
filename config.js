@@ -11,10 +11,10 @@ const DEFAULT_CONFIG = {
     hotmart: "TU_LINK_DE_HOTMART",
 
     planGratis: "#",
-  planMensual: "PEGAR_LINK_MEMBRESIA_MENSUAL",
-  planAnual: "PEGAR_LINK_MEMBRESIA_ANUAL",
-  planVitalicio: "PEGAR_LINK_MEMBRESIA_DE_POR_VIDA"
-},
+  planMensual: "https://e-books-ediciones-jb.myshopify.com/products/membresia-mensual-jb",
+planAnual: "https://e-books-ediciones-jb.myshopify.com/products/membresia-anual-jb",
+planVitalicio: "https://e-books-ediciones-jb.myshopify.com/products/membresia-vitalicia-jb",
+  },
 
   ebooks: [
     {
