@@ -138,3 +138,9 @@ footer{text-align:center;color:var(--muted);padding:35px 16px}@media(max-width:8
 .chatrow button{
   border:0;
 }
+#iaChef,
+.ia-chef,
+.ai-chef,
+.chef-ai {
+  display: none !important;
+}
