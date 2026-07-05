@@ -105,3 +105,36 @@ footer{text-align:center;color:var(--muted);padding:35px 16px}@media(max-width:8
   margin:8px 0;
   font-weight:600;
 }
+.ai{
+  background:linear-gradient(145deg,#140907,#2a120b);
+  color:#fff;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+
+.ai h3,
+.ai p{
+  color:#fff;
+}
+
+.chat{
+  margin-top:20px;
+}
+
+.chatrow{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+
+.chatrow input{
+  flex:1;
+  padding:15px;
+  border-radius:16px;
+  border:0;
+}
+
+.chatrow button{
+  border:0;
+}
