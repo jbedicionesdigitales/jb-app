@@ -80,3 +80,7 @@ function renderPlans() {
     '</article>';
 }
 document.addEventListener("DOMContentLoaded", renderAll);
+function quickAsk(question) {
+    document.getElementById("question").value = question;
+    askAI();
+}
