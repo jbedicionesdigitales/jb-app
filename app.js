@@ -61,7 +61,7 @@ function renderPlans() {
       '<span class="tag">Mensual</span>' +
       '<h3>Membresía Mensual</h3>' +
       '<div class="price">$9.990/mes</div>' +
-      '<p>Acceso premium mensual a e-books, recetas, bonus e IA Chef JB.</p>' +
+      '<p>Acceso premium mensual a e-books, recetas, bonus exclusivos.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.planMensual + '" target="_blank">Comprar mensual</a>' +
     '</article>' +
 
