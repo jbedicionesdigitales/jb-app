@@ -52,7 +52,7 @@ function renderPlans() {
     '<article class="card plan">' +
       '<span class="tag">E-books</span>' +
       '<h3>Compra individual</h3>' +
-      '<div class="price">$13.500</div>' +
+      '<div class="price">$12.990</div>' +
       '<p>Elegí el e-book que quieras y compralo de forma segura.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.shopify + '" target="_blank">Ver tienda</a>' +
     '</article>' +
@@ -67,18 +67,18 @@ function renderPlans() {
 
     '<article class="card plan featured">' +
       '<span class="tag">Más conveniente</span>' +
-      '<h3>Membresía Anual</h3>' +
-      '<div class="price">$89.990/año</div>' +
-      '<p>12 meses de acceso premium con mayor ahorro y contenido exclusivo.</p>' +
-      '<a class="btn primary" href="' + siteConfig.payments.planAnual + '" target="_blank">Comprar anual</a>' +
+      '<h3>Membresía Semestral</h3>' +
+      '<div class="price">$39.990/año</div>' +
+      '<p>6 meses de acceso premium con mayor ahorro y contenido exclusivo.</p>' +
+      '<a class="btn primary" href="' + siteConfig.payments.plansemestral + '" target="_blank">Comprar semestral</a>' +
     '</article>' +
 
     '<article class="card plan">' +
-      '<span class="tag">De por vida</span>' +
-      '<h3>Membresía Vitalicia</h3>' +
-      '<div class="price">$129.990</div>' +
-      '<p>Pago único con acceso permanente a la biblioteca y futuras actualizaciones.</p>' +
-      '<a class="btn primary" href="' + siteConfig.payments.planVitalicio + '" target="_blank">Comprar vitalicia</a>' +
+      '<span class="tag">Anual</span>' +
+      '<h3>Membresía Anual</h3>' +
+      '<div class="price">$79.990</div>' +
+      '<p>12 meses con acceso a toda la biblioteca y futuras actualizaciones.</p>' +
+      '<a class="btn primary" href="' + siteConfig.payments.plananual + '" target="_blank">Comprar anual</a>' +
     '</article>';
 }
 document.addEventListener("DOMContentLoaded", renderAll);
