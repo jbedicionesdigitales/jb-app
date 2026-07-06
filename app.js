@@ -60,7 +60,7 @@ function renderPlans() {
     '<article class="card plan">' +
       '<span class="tag">Mensual</span>' +
       '<h3>Membresía Mensual</h3>' +
-      '<div class="price">$9.990/mes</div>' +
+      '<div class="price">$9.990</div>' +
       '<p>Acceso premium mensual a e-books, recetas, bonus exclusivos.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.planMensual + '" target="_blank">Comprar mensual</a>' +
     '</article>' +
@@ -68,7 +68,7 @@ function renderPlans() {
     '<article class="card plan featured">' +
       '<span class="tag">Más conveniente</span>' +
       '<h3>Membresía Semestral</h3>' +
-      '<div class="price">$39.990/6 meses</div>' +
+      '<div class="price">$39.990</div>' +
       '<p>6 meses de acceso premium con mayor ahorro y contenido exclusivo.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.plansemestral + '" target="_blank">Comprar semestral</a>' +
     '</article>' +
@@ -76,7 +76,7 @@ function renderPlans() {
     '<article class="card plan">' +
       '<span class="tag">Anual</span>' +
       '<h3>Membresía Anual</h3>' +
-      '<div class="price">$79.990/año</div>' +
+      '<div class="price">$79.990</div>' +
       '<p>12 meses con acceso a toda la biblioteca y futuras actualizaciones.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.plananual + '" target="_blank">Comprar anual</a>' +
     '</article>';
