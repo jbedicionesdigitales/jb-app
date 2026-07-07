@@ -11,9 +11,9 @@ heroText: "Accedé a recetas digitales, muestras gratuitas, contenido premium y 
     hotmart: "TU_LINK_DE_HOTMART",
 
     planGratis: "#",
-  planMensual: "https://e-books-ediciones-jb.myshopify.com/products/membresia-mensual-jb",
-planAnual: "https://e-books-ediciones-jb.myshopify.com/products/membresia-anual-jb",
-planVitalicio: "https://e-books-ediciones-jb.myshopify.com/products/membresia-vitalicia-jb",
+  planMensual: "https://pay.hotmart.com/T106623595L",
+planSemestral: "https://pay.hotmart.com/Q106623888Y",
+planAnual: "https://pay.hotmart.com/O106623782C",
   },
 
   ebooks: [
