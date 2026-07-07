@@ -70,7 +70,7 @@ function renderPlans() {
       '<h3>Membresía Semestral</h3>' +
       '<div class="price">$39.990</div>' +
       '<p>6 meses de acceso premium con mayor ahorro y contenido exclusivo.</p>' +
-      '<a class="btn primary" href="' + siteConfig.payments.plansemestral + '" target="_blank">Comprar semestral</a>' +
+      '<a class="btn primary" href="' + siteConfig.payments.planSemestral + '" target="_blank">Comprar semestral</a>' +
     '</article>' +
 
     '<article class="card plan">' +
@@ -78,7 +78,7 @@ function renderPlans() {
       '<h3>Membresía Anual</h3>' +
       '<div class="price">$79.990</div>' +
       '<p>12 meses con acceso a toda la biblioteca y futuras actualizaciones.</p>' +
-      '<a class="btn primary" href="' + siteConfig.payments.plananual + '" target="_blank">Comprar anual</a>' +
+      '<a class="btn primary" href="' + siteConfig.payments.planAnual + '" target="_blank">Comprar anual</a>' +
     '</article>';
 }
 document.addEventListener("DOMContentLoaded", renderAll);
