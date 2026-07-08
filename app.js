@@ -76,7 +76,7 @@ function renderPlans() {
     '<article class="card plan">' +
       '<span class="tag">Anual</span>' +
       '<h3>Membresía Anual</h3>' +
-      '<div class="price">$79.990</div>' +
+      '<div class="price">$69.990</div>' +
       '<p>12 meses con acceso a toda la biblioteca y futuras actualizaciones.</p>' +
       '<a class="btn primary" href="' + siteConfig.payments.planAnual + '" target="_blank">Comprar anual</a>' +
     '</article>';
