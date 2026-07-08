@@ -49,13 +49,7 @@ function renderPlans() {
   if (!grid) return;
 
   grid.innerHTML =
-    '<article class="card plan">' +
-      '<span class="tag">E-books</span>' +
-      '<h3>Compra individual</h3>' +
-      '<div class="price">$12.990</div>' +
-      '<p>Elegí el e-book que quieras y compralo de forma segura.</p>' +
-      '<a class="btn primary" href="' + siteConfig.payments.shopify + '" target="_blank">Ver E-Books</a>' +
-    '</article>' +
+    
 
     '<article class="card plan">' +
       '<span class="tag">Mensual</span>' +
