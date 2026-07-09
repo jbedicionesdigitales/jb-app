@@ -1,6 +1,6 @@
 const DEFAULT_CONFIG = {
   brandName: "JB Ediciones Digitales",
-  brandSubtitle: "Plataforma editable de e-books con IA",
+  brandSubtitle: "Plataforma digital de E-Books y recursos exclusivos",
   heroPill: "Más de 200 recetas + bonus exclusivos",
   heroTitle: "E-books profesionales de cocina, pastelería y recetas exclusivas",
 heroText: "Accedé a recetas digitales, muestras gratuitas, contenido premium y recursos prácticos para organizar tus comidas y compras semanales.",
