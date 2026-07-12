@@ -54,7 +54,7 @@ planAnual: "https://pay.hotmart.com/O106623782C",
   description: "Recetas veganas deliciosas, prácticas y nutritivas para disfrutar todos los días.",
   image: "imagenes/recetas-veganas-by-jb.jpg",
   pdf: "pdf/recetas-veganas-by-jb-optimizado.pdf",
-  muestra: "pdf-muestra/Recetas Veganas Muestra.pdf",
+  muestra: "pdf-muestra/recetas-veganas-by-jb-muestra.pdf",
   shopify: "https://pay.hotmart.com/J106714279I"
 }
   ]
