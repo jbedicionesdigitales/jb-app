@@ -52,7 +52,8 @@ planAnual: "https://pay.hotmart.com/O106623782C",
     {
   title: "Recetas Veganas by JB",
   description: "Recetas veganas deliciosas, prácticas y nutritivas para disfrutar todos los días.",
-  image: "imagenes/recetas-veganas-by-jb.jpg",
+      info: "📖 25 recetas · 🎁 6 bonus · 🌟 5 recetas extras",
+      image: "imagenes/recetas-veganas-by-jb.jpg",
   pdf: "pdf/recetas-veganas-by-jb-optimizado.pdf",
   muestra: "pdf-muestra/recetas-veganas-by-jb-muestra.pdf",
   shopify: "https://pay.hotmart.com/J106714279I"
