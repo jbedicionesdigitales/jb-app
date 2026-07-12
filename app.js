@@ -30,9 +30,8 @@ function renderEbooks() {
   '<h3>' + book.title + '</h3>' +
   '<p>' + book.description + '</p>' +
   '<div class="ebook-info">' +
-    '<span>📖 50 recetas</span>' +
-    '<span>🎁 Bonus exclusivos</span>' +
-    '<span>⭐ Edición Premium</span>' +
+'<span>' + (book.info || '📖 50 recetas · 🎁 Bonus exclusivos') + '</span>' +
+      '<span>⭐ Edición Premium</span>' +
   '</div>' +
   '<div class="ebook-actions">' +
 '<a class="btn secondary" href="' + book.muestra + '" target="_blank">📖 Ver muestra gratuita</a>' +
