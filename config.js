@@ -48,6 +48,14 @@ planAnual: "https://pay.hotmart.com/O106623782C",
       pdf: "pdf/recetas-sin-tacc-by-jb-obtimizado.pdf",
       muestra: "pdf-muestra/Sin tacc Muestra.pdf",      
       shopify: "https://pay.hotmart.com/I106425122V",    
-  }
+  },
+    {
+  title: "Recetas Veganas by JB",
+  description: "Recetas veganas deliciosas, prácticas y nutritivas para disfrutar todos los días.",
+  image: "imagenes/recetas-veganas-by-jb.jpg",
+  pdf: "pdf/recetas-veganas-by-jb-optimizado.pdf",
+  muestra: "pdf-muestra/Recetas Veganas Muestra.pdf",
+  shopify: "https://pay.hotmart.com/J106714279I"
+}
   ]
 };
