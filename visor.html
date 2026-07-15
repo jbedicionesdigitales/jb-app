@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Vista protegida | JB Ediciones Digitales</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #17110d;
+      color: #ffffff;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #241711;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button,
+    .back-button {
+      border: 0;
+      border-radius: 10px;
+      padding: 9px 13px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button {
+      background: #ce5d2c;
+      color: #fff;
+    }
+
+    button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .back-button {
+      background: #ffffff;
+      color: #241711;
+    }
+
+    .page-info {
+      min-width: 88px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .notice {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      background: #2f211b;
+      color: #f5dfd1;
+    }
+
+    #viewer {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 10px 40px;
+    }
+
+    #pdfCanvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 8px 28px rgba(0,0,0,.5);
+    }
+
+    #loading,
+    #error {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 25px;
+      text-align: center;
+      border-radius: 14px;
+      background: #2f211b;
+    }
+
+    #error {
+      display: none;
+      color: #ffd9d9;
+    }
+
+    @media print {
+      body {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      button,
+      .back-button {
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+
+  <header class="topbar">
+    <div class="brand">JB Ediciones Digitales</div>
+
+    <div class="controls">
+      <a href="index.html" class="back-button">← Volver</a>
+
+      <button id="prevPage" type="button">
+        Anterior
+      </button>
+
+      <span class="page-info">
+        <span id="pageNum">0</span> /
+        <span id="pageCount">0</span>
+      </span>
+
+      <button id="nextPage" type="button">
+        Siguiente
+      </button>
+    </div>
+  </header>
+
+  <div class="notice">
+    Vista protegida de muestra · Descarga e impresión no habilitadas
+  </div>
+
+  <main id="viewer">
+    <div id="loading">Cargando muestra...</div>
+
+    <div id="error">
+      No se pudo abrir la muestra.
+    </div>
+
+    <canvas id="pdfCanvas"></canvas>
+  </main>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
+  </script>
+
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    const params = new URLSearchParams(window.location.search);
+    const pdfUrl = params.get("pdf");
+
+    const canvas = document.getElementById("pdfCanvas");
+    const context = canvas.getContext("2d");
+
+    const loadingBox = document.getElementById("loading");
+    const errorBox = document.getElementById("error");
+
+    const pageNumElement = document.getElementById("pageNum");
+    const pageCountElement = document.getE
