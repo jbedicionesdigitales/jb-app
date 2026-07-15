@@ -194,8 +194,10 @@
       "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
     const params = new URLSearchParams(window.location.search);
-    const pdfUrl = params.get("pdf");
-
+    const pdfParam = params.get("pdf");
+const pdfUrl = pdfParam
+  ? new URL(pdfParam, window.location.href).href
+  : null;
     const canvas = document.getElementById("pdfCanvas");
     const context = canvas.getContext("2d");
 
