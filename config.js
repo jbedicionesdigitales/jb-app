@@ -63,7 +63,7 @@ planAnual: "https://pay.hotmart.com/O106623782C",
   description: "Transforma ingredientes simples en postres espectaculares y llena cada vasito de sabor, creatividad y dulzura.",
       info: "📖 25 recetas · 🎁 4 bonus · 🌟 5 recetas extras",
       image: "imagenes/postres-en-vasitos-by-jb.jpg",
-  pdf: "pdf/postres-en-vasitos-by-jb-optimizado.pdf",
+  pdf: "pdf/postres-en-vasitos-by-JB-optimizado.pdf",
   muestra: "pdf-muestra/postres-en-vasitos-by-jb-muestra.pdf",
   shopify: "https://pay.hotmart.com/A106749926I"
     }
