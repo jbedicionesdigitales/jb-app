@@ -185,24 +185,156 @@
     <canvas id="pdfCanvas"></canvas>
   </main>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 
-  <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
 
-    const params = new URLSearchParams(window.location.search);
-    const pdfParam = params.get("pdf");
-const pdfUrl = pdfParam
-  ? new URL(pdfParam, window.location.href).href
-  : null;
-    const canvas = document.getElementById("pdfCanvas");
-    const context = canvas.getContext("2d");
+  const params = new URLSearchParams(window.location.search);
+  const pdfParam = params.get("pdf");
+  const pdfUrl = pdfParam
+    ? new URL(pdfParam, window.location.href).href
+    : null;
 
-    const loadingBox = document.getElementById("loading");
-    const errorBox = document.getElementById("error");
+  const canvas = document.getElementById("pdfCanvas");
+  const context = canvas.getContext("2d");
 
-    const pageNumElement = document.getElementById("pageNum");
-    const pageCountElement = document.getE
+  const loadingBox = document.getElementById("loading");
+  const errorBox = document.getElementById("error");
+
+  const pageNumElement = document.getElementById("pageNum");
+  const pageCountElement = document.getElementById("pageCount");
+
+  const prevButton = document.getElementById("prevPage");
+  const nextButton = document.getElementById("nextPage");
+
+  let pdfDocument = null;
+  let currentPage = 1;
+  let rendering = false;
+  let pendingPage = null;
+
+  function mostrarError(error) {
+    console.error("Error al abrir el PDF:", error);
+    loadingBox.style.display = "none";
+    canvas.style.display = "none";
+    errorBox.style.display = "block";
+  }
+
+  function actualizarBotones() {
+    prevButton.disabled = currentPage <= 1;
+    nextButton.disabled =
+      !pdfDocument || currentPage >= pdfDocument.numPages;
+  }
+
+  async function renderizarPagina(numero) {
+    if (!pdfDocument) return;
+
+    rendering = true;
+
+    try {
+      const page = await pdfDocument.getPage(numero);
+
+      const viewportInicial = page.getViewport({ scale: 1 });
+      const anchoDisponible = Math.min(window.innerWidth - 20, 960);
+      const escala = anchoDisponible / viewportInicial.width;
+      const viewport = page.getViewport({ scale: escala });
+
+      const pixelRatio = window.devicePixelRatio || 1;
+
+      canvas.width = Math.floor(viewport.width * pixelRatio);
+      canvas.height = Math.floor(viewport.height * pixelRatio);
+
+      canvas.style.width = Math.floor(viewport.width) + "px";
+      canvas.style.height = Math.floor(viewport.height) + "px";
+
+      await page.render({
+        canvasContext: context,
+        viewport: viewport,
+        transform:
+          pixelRatio !== 1
+            ? [pixelRatio, 0, 0, pixelRatio, 0, 0]
+            : null
+      }).promise;
+
+      currentPage = numero;
+      pageNumElement.textContent = currentPage;
+
+      loadingBox.style.display = "none";
+      errorBox.style.display = "none";
+      canvas.style.display = "block";
+
+      actualizarBotones();
+    } catch (error) {
+      mostrarError(error);
+    }
+
+    rendering = false;
+
+    if (pendingPage !== null) {
+      const paginaPendiente = pendingPage;
+      pendingPage = null;
+      renderizarPagina(paginaPendiente);
+    }
+  }
+
+  function solicitarPagina(numero) {
+    if (rendering) {
+      pendingPage = numero;
+    } else {
+      renderizarPagina(numero);
+    }
+  }
+
+  prevButton.addEventListener("click", function () {
+    if (currentPage > 1) {
+      solicitarPagina(currentPage - 1);
+    }
+  });
+
+  nextButton.addEventListener("click", function () {
+    if (pdfDocument && currentPage < pdfDocument.numPages) {
+      solicitarPagina(currentPage + 1);
+    }
+  });
+
+  async function iniciarVisor() {
+    if (!pdfUrl) {
+      mostrarError("No se recibió la dirección del PDF.");
+      return;
+    }
+
+    try {
+      pdfDocument = await pdfjsLib.getDocument(pdfUrl).promise;
+
+      pageCountElement.textContent = pdfDocument.numPages;
+      actualizarBotones();
+
+      await renderizarPagina(1);
+    } catch (error) {
+      mostrarError(error);
+    }
+  }
+
+  window.addEventListener("resize", function () {
+    if (pdfDocument && !rendering) {
+      solicitarPagina(currentPage);
+    }
+  });
+
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    const tecla = event.key.toLowerCase();
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      ["p", "s", "u", "c"].includes(tecla)
+    ) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener("dragstart", f
