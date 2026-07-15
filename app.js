@@ -34,9 +34,10 @@ function renderEbooks() {
       '<span>⭐ Edición Premium</span>' +
   '</div>' +
   '<div class="ebook-actions">' +
-'<a class="btn secondary" href="' + book.muestra + '" target="_blank">📖 Ver muestra gratuita</a>' +
+'<button class="btn secondary" onclick="verMuestra(\'' + book.muestra + '\')">📖 Ver muestra</button>' +
 '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
-'</div>';   
+'</div>';
+    '</div>';   
     '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
   '</div>';
     grid.appendChild(card);
@@ -209,7 +210,8 @@ function borrarListaCompras() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarListaCompras);
-
-
+function verMuestra(pdf){
+    window.location.href = "visor.html?pdf=" + encodeURIComponent(pdf);
+}
 
 
