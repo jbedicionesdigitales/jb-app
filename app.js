@@ -30,13 +30,11 @@ function renderEbooks() {
   '<h3>' + book.title + '</h3>' +
   '<p>' + book.description + '</p>' +
   '<div class="ebook-info">' +
-'<span>' + (book.info || '📖 50 recetas · 🎁 Bonus exclusivos') + '</span>' +
-      '<span>⭐ Edición Premium</span>' +
+    '<span>' + (book.info || '📖 50 recetas · 🎁 Bonus exclusivos') + '</span>' +
+    '<span>⭐ Edición Premium</span>' +
   '</div>' +
   '<div class="ebook-actions">' +
-'<a class="btn secondary" href="' + book.muestra + '" target="_blank">📖 Ver muestra gratuita</a>' +
-'<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
-      '</div>';   
+    '<a class="btn secondary" href="' + book.muestra + '" target="_blank">📖 Ver muestra gratuita</a>' +
     '<a class="btn primary" href="' + book.shopify + '" target="_blank">Comprar ahora</a>' +
   '</div>';
     grid.appendChild(card);
