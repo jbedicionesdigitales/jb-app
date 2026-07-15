@@ -57,6 +57,15 @@ planAnual: "https://pay.hotmart.com/O106623782C",
   pdf: "pdf/recetas-veganas-by-jb-optimizado.pdf",
   muestra: "pdf-muestra/recetas-veganas-by-jb-muestra.pdf",
   shopify: "https://pay.hotmart.com/J106714279I"
-}
+      },
+        {
+  title: "Postres en Vasito by JB",
+  description: "Transforma ingredientes simples en postres espectaculares y llena cada vasito de sabor, creatividad y dulzura.",
+      info: "📖 25 recetas · 🎁 4 bonus · 🌟 5 recetas extras",
+      image: "imagenes/postres-en-vasitos-by-jb.jpg",
+  pdf: "pdf/postres-en-vasitos-by-jb-optimizado.pdf",
+  muestra: "pdf-muestra/postres-en-vasitos-by-jb-muestra.pdf",
+  shopify: "https://pay.hotmart.com/A106749926I"
+    }
   ]
 };
