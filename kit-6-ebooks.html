@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kit 6 Ebooks | JB Ediciones Digitales</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fffaf5;
+    color:#272727;
+    line-height:1.6;
+}
+
+.hero{
+    background:linear-gradient(135deg,#35170d,#7b3218);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.marca{
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#ffd9a8;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.1;
+    max-width:800px;
+    margin:auto;
+}
+
+.destacado{
+    color:#ffd166;
+}
+
+.hero-subtitulo{
+    max-width:700px;
+    margin:20px auto;
+    font-size:20px;
+}
+
+.badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:25px auto;
+}
+
+.badge{
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.25);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.precio-box{
+    margin:30px auto 20px;
+}
+
+.precio-texto{
+    font-size:17px;
+}
+
+.precio{
+    font-size:58px;
+    font-weight:900;
+    color:#ffd166;
+    line-height:1;
+    margin:8px 0;
+}
+
+.digital{
+    font-size:14px;
+    opacity:.9;
+}
+
+.boton{
+    display:inline-block;
+    background:#19a957;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:19px;
+    padding:17px 30px;
+    border-radius:12px;
+    margin-top:24px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.boton:hover{
+    background:#128447;
+}
+
+.seguro{
+    margin-top:13px;
+    font-size:13px;
+    opacity:.85;
+}
+
+section{
+    padding:55px 20px;
+}
+
+.contenedor{
+    max-width:1050px;
+    margin:auto;
+}
+
+.titulo{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:12px;
+    color:#4c2112;
+}
+
+.subtitulo{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 38px;
+    color:#666;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border:1px solid #f0e4da;
+}
+
+.card-icono{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#542514;
+    margin-bottom:8px;
+}
+
+.incluye{
+    background:#fff;
+}
+
+.lista{
+    max-width:720px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.item{
+    background:#fff7ed;
+    padding:15px;
+    border-radius:10px;
+    border-left:4px solid #d66a28;
+}
+
+.muestra{
+    background:#f7eee6;
+}
+
+.muestra-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.muestra-box p{
+    color:#666;
+}
+
+.oferta{
+    background:#3d1c10;
+    color:white;
+    text-align:center;
+}
+
+.oferta .titulo{
+    color:white;
+}
+
+.oferta p{
+    max-width:650px;
+    margin:10px auto;
+}
+
+.precio-final{
+    font-size:60px;
+    font-weight:900;
+    color:#ffd166;
+    margin:15px 0;
+}
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+.pregunta{
+    background:white;
+    margin-bottom:13px;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #eee0d5;
+}
+
+.pregunta strong{
+    display:block;
+    color:#542514;
+    margin-bottom:5px;
+}
+
+footer{
+    background:#21100a;
+    color:#ddd;
+    text-align:center;
+    padding:30px 20px;
+    font-size:13px;
+}
+
+@media(max-width:750px){
+
+    .hero{
+        padding:40px 18px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-subtitulo{
+        font-size:18px;
+    }
+
+    .precio{
+        font-size:50px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .lista{
+        grid-template-columns:1fr;
+    }
+
+    .titulo{
+        font-size:28px;
+    }
+
+    .boton{
+        display:block;
+        width:100%;
+        max-width:390px;
+        margin:24px auto 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+    <div class="marca">
+        JB EDICIONES DIGITALES
+    </div>
+
+    <h1>
+        6 Ebooks de Cocina en un
+        <span class="destacado">Kit Completo</span>
+    </h1>
+
+    <p class="hero-subtitulo">
+        Descubrí más de <strong>250 recetas</strong>, bonus y contenido
+        especial para disfrutar de la cocina todos los días.
+    </p>
+
+    <div class="badges">
+        <span class="badge">📚 6 Ebooks</span>
+        <span class="badge">🍰 +250 Recetas</span>
+        <span class="badge">🎁 Bonus incluidos</span>
+        <span class="badge">📱 Formato digital</span>
+    </div>
+
+    <div class="precio-box">
+        <div class="precio-texto">Llevate el Kit Completo por</div>
+        <div class="precio">$6.000</div>
+        <div class="digital">Compra digital · Acceso al contenido adquirido</div>
+    </div>
+
+    <!-- DESPUÉS COLOCAREMOS AQUÍ EL LINK DE HOTMART -->
+    <a class="boton" href="#">
+        QUIERO EL KIT DE 6 EBOOKS
+    </a>
+
+    <div class="seguro">
+        🔒 Compra segura
+    </div>
+
+</header>
+
+
+<section class="incluye">
+
+<div class="contenedor">
+
+    <h2 class="titulo">
+        6 Ebooks. Cientos de recetas. Un solo Kit.
+    </h2>
+
+    <p class="subtitulo">
+        Una colección pensada para que tengas diferentes estilos
+        de cocina y pastelería siempre a tu alcance.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-icono">🥗</div>
+            <h3>Cocina Saludable</h3>
+            <p>Recetas deliciosas y prácticas para incorporar opciones más saludables a tu cocina.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icono">🎂</div>
+            <h3>Pastelería Profesional</h3>
+            <p>Preparaciones de pastelería explicadas para lograr resultados increíbles.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icono">🍪</div>
+            <h3>Galletitas Estilo New York</h3>
+            <p>Cookies irresistibles, variedades especiales y recetas para sorprender.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icono">🍨</div>
+            <h3>Postres en Vasitos</h3>
+            <p>Postres individuales ideales para disfrutar, compartir o sumar a tu emprendimiento.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icono">🌾</div>
+            <h3>Recetas Sin TACC</h3>
+            <p>Una selección de preparaciones sin TACC con diferentes alternativas para cada ocasión.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icono">🌱</div>
+            <h3>Recetas Veganas</h3>
+            <p>Recetas 100% veganas, variadas y llenas de sabor.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="muestra">
+
+<div class="contenedor">
+
+    <h2 class="titulo">
+        Mirá todo lo que vas a recibir
+    </h2>
+
+    <p class="subtitulo">
+        No estás comprando solamente un listado de recetas.
+        Cada ebook fue preparado para ofrecerte una experiencia
+        práctica, visual y fácil de consultar.
+    </p>
+
+    <div class="lista">
+
+        <div class="item">✓ Más de 250 recetas</div>
+        <div class="item">✓ Fotografías a todo color</div>
+        <div class="item">✓ Ingredientes detallados</div>
+        <div class="item">✓ Preparaciones paso a paso</div>
+        <div class="item">✓ Bonus especiales</div>
+        <div class="item">✓ Recetas adicionales</div>
+        <div class="item">✓ Diseño editorial</div>
+        <div class="item">✓ Compatible con celular, tablet y PC</div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="contenedor">
+
+    <h2 class="titulo">
+        Conocé nuestros ebooks por dentro
+    </h2>
+
+    <p class="subtitulo">
+        Queremos que puedas conocer parte del contenido y la calidad
+        de nuestros ebooks antes de realizar tu compra.
+    </p>
+
+    <div class="muestra-box">
+
+        <h3>📖 Vista del contenido real</h3>
+
+        <p>
+            En esta sección incorporaremos imágenes reales de las páginas
+            interiores de los 6 ebooks para que puedas ver su diseño,
+            fotografías y presentación.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="oferta">
+
+<div class="contenedor">
+
+    <h2 class="titulo">
+        Accedé al Kit Completo
+    </h2>
+
+    <p>
+        6 ebooks digitales con más de 250 recetas,
+        contenido adicional y bonus incluidos.
+    </p>
+
+    <div class="precio-final">
+        $6.000
+    </div>
+
+    <!-- DESPUÉS COLOCAREMOS AQUÍ EL LINK DE HOTMART -->
+    <a class="boton" href="#">
+        COMPRAR AHORA
+    </a>
+
+    <div class="seguro">
+        🔒 Pago seguro
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="contenedor">
+
+    <h2 class="titulo">
+        Preguntas frecuentes
+    </h2>
+
+    <div class="faq">
+
+        <div class="pregunta">
+            <strong>¿Los ebooks son digitales?</strong>
+            Sí. Todo el contenido del Kit se entrega en formato digital.
+        </div>
+
+        <div class="pregunta">
+            <strong>¿Puedo verlos desde el celular?</strong>
+            Sí. Podés consultar los ebooks desde celular, tablet o computadora.
+        </div>
+
+        <div class="pregunta">
+            <strong>¿Qué incluye la compra?</strong>
+            Recibís los 6 ebooks del Kit, con más de 250 recetas,
+            bonus y contenido adicional incluido en cada edición.
+        </div>
+
+        <div class="pregunta">
+            <strong>¿El pago es seguro?</strong>
+            Sí. El pago se realiza mediante la plataforma de pago indicada
+            al seleccionar el botón de compra.
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    <strong>JB Ediciones Digitales</strong><br>
+    Contenido digital creado para disfrutar, aprender y cocinar.<br><br>
+
+    © 2026 JB Ediciones Digitales · Todos los derechos reservados.
+
+</footer>
+
+</body>
+</html>
