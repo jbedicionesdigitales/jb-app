@@ -159,12 +159,18 @@ section{
 }
 
 .card{
-    background:white;
+    background:#fff;
     padding:25px;
     border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    border:1px solid #f0e4da;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    border:1px solid #eee4da;
+    transition:all .30s ease;
 }
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 16px 35px rgba(0,0,0,.18);
+}    
 
 .card-icono{
     font-size:35px;
