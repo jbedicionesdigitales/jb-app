@@ -38,13 +38,29 @@ body{
 }
 
 .hero{
-    background:linear-gradient(135deg,#35170d,#7b3218);
-    color:white;
+    position:relative;
+    color:#fff;
     text-align:center;
-    padding:55px 20px;
+    padding:70px 20px 90px;
+    background:
+    linear-gradient(rgba(26,12,7,.75),rgba(58,22,10,.78)),
+    url("imagenes/fondo-cocina.jpg") center center/cover no-repeat;
+    overflow:hidden;
+}
+    .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at center,
+    rgba(255,170,70,.08),
+    transparent 60%);
 }
 
-.marca{
+.hero>*
+    {
+    position:relative;
+    z-index:2;
+}.marca{
     font-size:15px;
     letter-spacing:2px;
     text-transform:uppercase;
@@ -53,12 +69,12 @@ body{
 }
 
 .hero h1{
-    font-size:42px;
-    line-height:1.1;
-    max-width:800px;
+    font-size:56px;
+    line-height:1.05;
+    max-width:900px;
     margin:auto;
+    text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
-
 .destacado{
     color:#ffd166;
 }
@@ -392,7 +408,7 @@ footer{
         6 Ebooks de Cocina en un
         <span class="destacado">Kit Completo</span>
     </h1>
-"Ver Página hasta el Final"
+
     <p class="hero-subtitulo">
         Descubrí más de <strong>250 recetas</strong>, bonus y contenido
         especial para disfrutar de la cocina todos los días.
