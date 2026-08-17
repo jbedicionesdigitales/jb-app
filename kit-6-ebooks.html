@@ -204,8 +204,10 @@ section{
     box-shadow:0 6px 18px rgba(0,0,0,.08);
     border:1px solid #eee4da;
     transition:all .30s ease;
-}
 
+    display:flex;
+    flex-direction:column;
+}
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 16px 35px rgba(0,0,0,.18);
@@ -228,8 +230,14 @@ section{
     color:#542514;
     margin-bottom:8px;
 }
+.card .boton-whatsapp{
+    margin-top:auto;
+}
 
-.incluye{
+.card > div:last-child{
+    margin-top:15px;
+}
+    .incluye{
     background:#fff;
 }
 
